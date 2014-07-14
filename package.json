@@ -1,8 +1,8 @@
 {
   "name": "pushjson",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A really asynchronous JSON stringinfy good for making Nodejs co-operative when sending big JSON responses",
-  "main": "index.js",
+  "main": "pushJSON.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
