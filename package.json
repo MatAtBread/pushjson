@@ -1,0 +1,27 @@
+{
+  "name": "pushjson",
+  "version": "0.1.1",
+  "description": "A really asynchronous JSON stringinfy good for making Nodejs co-operative when sending big JSON responses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatAtBread/pushjson/"
+  },
+  "engine": "node >= 0.10.0",
+  "keywords": [
+    "Javascript",
+    "asynchronous",
+    "node",
+    "JSON",
+    "stringify"
+  ],
+  "author": "MatAtBread<bread@mailed.me.uk>",
+  "license": "MIT"
+}
