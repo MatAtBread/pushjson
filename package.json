@@ -1,6 +1,6 @@
 {
   "name": "pushjson",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A really asynchronous JSON stringinfy good for making Nodejs co-operative when sending big JSON responses",
   "main": "pushJSON.js",
   "scripts": {

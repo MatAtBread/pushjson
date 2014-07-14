@@ -1,12 +1,17 @@
 pushjson
 ========
 
-A really asynchronous JSON stringinfy good for making Nodejs co-operative when sending big JSON responses
+A really asynchronous JSON stringify good for making Nodejs co-operative when sending big JSON responses
 
 Installation
 ============
 
 	npm install pushjson
+
+Why pushjson?
+=============
+
+I looked at other implementations, but they are essentially recursive, and so eat stack possibly to exhaustion with hugely nested objects, or rely on process.nextTick or setImmediate, which means that while they co-operate, they cannot be used to fill a buffer of arbitrary length, making them very inefficient for buffered IO (i.e. all useful streams in the Node). pushjson is not recusrive (it uses a falttened FSM and state-stack), but iterative, so it can be paused and resumed at will.
 
 Usage
 =====
