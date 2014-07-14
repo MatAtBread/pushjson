@@ -20,10 +20,12 @@ Finally, you can pass a function to 'writeToStream' instead of a Stream that is 
 	var json = require('pushjson') ;
 		...
 	// Create a Readable stream from an object and pipe it to a response
-	json.Readable(objectToSerailize,serializer).pipe(response) ;
+	// "replacer" is optional and can be omitted
+	json.Readable(objectToSerailize,replacer).pipe(response) ;
 		...
 	// Write directly to a stream and close it when we're finished
-	json.writeToStream(response,objectToSerailize,serializer,function(){ 
+	// "replacer" is optional and can be null
+	json.writeToStream(response,objectToSerailize,replacer,function(){ 
 		rsp.end(); 
 	}) ;
 		...
@@ -49,8 +51,11 @@ Finally, you can pass a function to 'writeToStream' instead of a Stream that is 
 				setImmediate(json.continueSending(sendNext)) ;
 			}
 		}
-		
-	},objectToSerailize,serializer,function(){ 
+	},objectToSerailize,
+	// "replacer" is optional and can be null
+	replacer,
+	// Final callback when we're done is optional and can be omitted
+	function(){ 
 		rsp.end(); 
 	}) ;
 		...
