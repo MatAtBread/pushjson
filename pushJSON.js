@@ -65,20 +65,20 @@ function writeInChunks(out,obj,replacer,onComplete) {
 		if (replacer==null) {
 			xform = function(parent,k,o) {
 				if (o && typeof o === 'object' && typeof o.toJSON === 'function') {
-					o = value.toJSON(k);
+					o = o.toJSON(k);
 				}
 				return o ;
 			}
 		}else if (typeof replacer === 'function'){
 			xform = function(parent,k,o) {
 				if (o && typeof o === 'object' && typeof o.toJSON === 'function') {
-					o = value.toJSON(k);
+					o = o.toJSON(k);
 				}
 				return replacer.call(parent,k,o) ;
 			}
 		} else if (Array.isArray(replacer)) {
 			if (o && typeof o === 'object' && typeof o.toJSON === 'function') {
-				o = value.toJSON(k);
+				o = o.toJSON(k);
 			}
 			// Do something with replacer
 			//return replacer.call(parent,k,o) ;
