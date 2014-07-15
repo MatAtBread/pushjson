@@ -3,6 +3,7 @@
  */
 
 var Readable = require('stream').Readable ;
+var DEBUG = global.DEBUG || (process.env.DEV ? function(){ console.log.apply(this,arguments); }:function(){}) ;
 
 function iter(fn) {
 	return function() {
@@ -33,7 +34,7 @@ function createReadStream(obj,replacer,onComplete) {
 			rs.push(chunk.join("")) ;
 		chunk = null ;
 		rs.push(null) ;
-		console.log("PushJSON t="+(Date.now()-t)) ;
+		DEBUG(1,"PushJSON t="+(Date.now()-t)) ;
 		onComplete && onComplete() ;
 	}) ;
 	
